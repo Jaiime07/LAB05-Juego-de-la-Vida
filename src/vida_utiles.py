@@ -73,12 +73,11 @@ def contar_vecinos(tablero: list[list[bool]], fila: int, col: int) -> int:
     vecinos = 0
     for i in (-1,0,1):
         for j in (-1, 0, 1):
-            a = (i+fila)%len(tablero)
-            b = (i+col)%len(tablero[0])
-            if tablero[a][b]:
-                vecinos += 1
-            elif i == fila and j == col and tablero[fila][col]:
-                vecinos -= 1
+            if not(i == 0 and j == 0):
+                a = (i+fila)%len(tablero)
+                b = (j+col)%len(tablero[0])
+                if tablero[a][b]:
+                    vecinos += 1
     return vecinos
 
 
