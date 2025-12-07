@@ -90,5 +90,17 @@ def calcular_siguiente_generacion(tablero):
     Devuelve:
         Una nueva lista de listas que representa el tablero en la siguiente generación.
     """
-    # TODO: Ejercicio 5
-    pass
+    filas_tablero = len(tablero)
+    col_tablero = len(tablero[0])
+    res = crear_tablero(filas_tablero, col_tablero)
+
+    for i in range(filas_tablero):
+        for j in range(col_tablero):
+            vecinos_vivos = contar_vecinos(tablero, i, j)
+            if (vecinos_vivos == 2 or vecinos_vivos == 3) and tablero[i][j]:
+                res[i][j] = True
+            elif vecinos_vivos == 3:
+                res[i][j] = True
+            else:
+                res[i][j] = False
+    return res

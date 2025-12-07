@@ -32,6 +32,7 @@ def test_insertar_patron():
     ]
 
 def test_contar_vecinos():
+    print('Probando contar_vecinos...')
     tablero = [
         [False, True, False],
         [False, False, True],
@@ -41,6 +42,7 @@ def test_contar_vecinos():
     assert contar_vecinos(tablero, 0, 1) == 4
     assert contar_vecinos(tablero, 1, 1) == 5
     assert contar_vecinos(tablero, 2, 2) == 4
+    print('Todo OK')
 
 def test_calcular_siguiente_generacion():
     tablero_inicial = [
@@ -62,7 +64,7 @@ test_crear_tablero()
 test_crear_tablero_aleatorio()
 test_insertar_patron()
 test_contar_vecinos()
-#test_calcular_siguiente_generacion()
+test_calcular_siguiente_generacion()
 print("Todos los tests pasaron correctamente.")
 
     
